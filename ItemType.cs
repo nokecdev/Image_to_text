@@ -5,21 +5,22 @@ namespace Image_to_text
 {
     public class ItemType : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
         public ItemType()
         {
             ItemTypes = new ObservableCollection<ItemModel>
             {
-                new ItemModel() { Id = 0, Name = "Txt" },
-                new ItemModel() { Id = 1, Name = "Pdf" },
-                new ItemModel() { Id = 2, Name = "Word" }
+                new() { Id = 0, Name = "Txt" },
+                new() { Id = 1, Name = "Pdf" },
+                new() { Id = 2, Name = "Word" }
             };
             TranslateFrom = new ObservableCollection<TranslateType>
             {
-                new TranslateType() { Id = 0, Language = "Hun" },
-                new TranslateType() { Id = 1, Language = "Eng"}
+                new() { Id = 0, Language = "Hun" },
+                new() { Id = 1, Language = "Eng"}
             };
             SelectedItemType = null;
+            
         }
 
         public ObservableCollection<ItemModel> ItemTypes { get; set; }
